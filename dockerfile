@@ -1,2 +1,4 @@
-FROM tomcat:8.0.20-jre8
-COPY student-survey-backend.war /usr/local/tomcat/webapps/
+FROM tomcat:10.1-jdk11-openjdk
+ADD target/student-survey-backend.war /usr/local/tomcat/webapps/
+EXPOSE 8080
+CMD ["catalina.sh","run"]
