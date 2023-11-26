@@ -15,7 +15,7 @@ def generateTag() {
 pipeline{
     environment
     {
-        registry = "rbptl/student-form-image"
+        registry = "rbptl/student-survey-backend"
         registryCredential = "docker-login"
     }
     agent any
