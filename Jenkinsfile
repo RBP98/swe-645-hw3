@@ -19,7 +19,10 @@ pipeline{
         registryCredential = "docker-login"
     }
     agent any
-    
+    tools
+    {
+     maven 'mvn'	    
+    }
     stages
     {
 
