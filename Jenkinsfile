@@ -34,7 +34,7 @@ pipeline{
                 {
 	    	    sh 'whoami'
                     sh 'rm -rf *.jar'
-                    //sh 'mvn clean package'
+                    sh 'mvn clean package'
 		    sh 'echo ${BUILD_TIMESTAMP}'
                     tag = generateTag()
                     image = docker.build("rbptl/student-survey-backend:"+tag)
