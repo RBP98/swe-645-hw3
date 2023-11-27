@@ -11,7 +11,7 @@
 
 FROM openjdk:17
 # EXPOSE 8080
-ARG JAR_FILE=target/student-survey-backend-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/student-survey-backend.jar
 COPY ${JAR_FILE} .
 CMD [ "java", "-jar",  "/student-survey-backend-0.0.1-SNAPSHOT.jar"]
 
