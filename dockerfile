@@ -15,6 +15,6 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:17-jdk-slim
 WORKDIR /opt/app
-COPY --from=tag /home/app/target/student-survey-backend.jar app.jar
+COPY --from=tag /home/app/target/student-survey-backend-0.0.1-SNAPSHOT.jar app.jar
 CMD java -jar app.jar
 # ENTRYPOINT ["java","-jar","app.jar"]
