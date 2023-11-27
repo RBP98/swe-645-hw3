@@ -9,7 +9,12 @@
 # EXPOSE 8080
 # CMD java -jar app.jar
 
-FROM maven:3.8.5-openjdk-17-slim
+FROM maven:3.8.5-openjdk-17-slim AS tag
 COPY src /student-survey/app/src
 COPY pom.xml /student-survey/app
-RUN mvn -f /student-survey/app/pom.xml clean install
+RUN mvn -f /student-survey/app/pom.xml clean package
+FROM openjdk:17-jdk-slim
+WORKDIR /opt/app
+COPY --from=tag /student-survey/app/target/student-survey-backend.jar app.jar
+CMD java -jar app.jar
+# ENTRYPOINT ["java","-jar","app.jar"]
