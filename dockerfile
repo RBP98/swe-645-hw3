@@ -10,6 +10,6 @@
 # CMD java -jar app.jar
 
 FROM maven:3.8.5-openjdk-17-slim
-# COPY src /home/app/src
-# COPY pom.xml /home/app
-RUN mvn clean package
+COPY src /student-survey/app/src
+COPY pom.xml /student-survey/app
+RUN mvn -f /student-survey/app/pom.xml clean package
