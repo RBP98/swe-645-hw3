@@ -1,4 +1,10 @@
-FROM tomcat:10.1-jdk11-openjdk
-ADD target/student-survey-backend.war /usr/local/tomcat/webapps/
+#This is a docker file which is used to build docker image
+
+# Swathi Guptha - G01393328
+# Rajas Bipinchandra patil - G01393353
+# Poorvi Lakkadi - G01389351
+
+FROM openjdk:17
+COPY target/student-survey-backend.jar app.jar
 EXPOSE 8080
-CMD ["catalina.sh","run"]
+CMD java -jar app.jar
