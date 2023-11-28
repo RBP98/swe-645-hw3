@@ -1,4 +1,4 @@
-package com.swe645.studentSurveyForm.form;
+package com.swe645.studentSurveyForm.form.entity;
 
 
 public enum CampusAttributes {
