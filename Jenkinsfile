@@ -60,7 +60,7 @@ pipeline{
             {
                 script
                 {
-                    // sh 'pwd'
+                    sh 'pwd'
                     // sh 'kubectl --kubeconfig=/home/ubuntu/.kube/config set image deployment/swe645-hw3 hw3=rbptl/student-survey-backend:'+tag
                 }
             }
