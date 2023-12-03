@@ -37,7 +37,7 @@ pipeline{
                     sh 'mvn clean package'
 		            sh 'echo ${BUILD_TIMESTAMP}'
                     tag = generateTag()
-                    image = docker.build("rbptl/student-survey-backend:"+tag)
+                    image = docker.build("rbptl/student-survey-backend:latest")
                 }
             }
         }
@@ -61,7 +61,7 @@ pipeline{
                 script
                 {
                     sh 'pwd'
-                    sh 'kubectl --kubeconfig=/home/ubuntu/.kube/config set image deployment/swe645-hw3 hw3=rbptl/student-survey-backend:'+tag
+                    sh 'kubectl --kubeconfig=/home/ubuntu/.kube/config set image deployment/swe645-hw3 hw3=rbptl/student-survey-backend:latest'
                 }
             }
         }
