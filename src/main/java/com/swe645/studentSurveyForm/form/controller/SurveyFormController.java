@@ -12,7 +12,7 @@ public class SurveyFormController {
     @Autowired
     private SurveyFormService surveyFormService;
 
-    @RequestMapping("/rajas")
+    @RequestMapping("/form")
     public List<Form> getAllStudentForms(){
         return surveyFormService.getAllStudentForms();
     }
